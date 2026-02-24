@@ -50,6 +50,22 @@ ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact 
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
+// ScrollReveal for Education Timeline
+ScrollReveal().reveal('.timeline-item', {
+    origin: 'left',
+    distance: '50px',
+    duration: 2000,
+    interval: 200
+});
+
+// ScrollReveal for Certification Boxes
+ScrollReveal().reveal('.cert-box', {
+    origin: 'bottom',
+    distance: '50px',
+    duration: 2000,
+    interval: 200
+});
+
 // typed js
 const typed =new Typed('.multiple-text', {
     strings: ['Python Developer', 'Web Developer', 'Business Analyst','Data Analyst'],
@@ -59,3 +75,56 @@ const typed =new Typed('.multiple-text', {
     loop: true
 });
 
+// ScrollReveal for Experience Timeline
+ScrollReveal().reveal('.experience .timeline-item', {
+    origin: 'left',
+    distance: '50px',
+    duration: 2000,
+    interval: 200
+});
+
+// Projects Filter
+const projectButtons = document.querySelectorAll('#projects .filter-btn');
+const projectItems = document.querySelectorAll('#projects .projects-box');
+
+projectButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        projectButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        projectItems.forEach(item => {
+            if(filter === 'all' || item.getAttribute('data-category') === filter){
+                item.style.display = 'block';
+                item.style.opacity = '1';
+                item.style.transition = 'all 0.5s ease';
+            } else {
+                item.style.opacity = '0';
+                setTimeout(()=>{ item.style.display='none'; }, 500);
+            }
+        });
+    });
+});
+
+// Certifications Filter
+const certButtons = document.querySelectorAll('#certifications .filter-btn');
+const certItems = document.querySelectorAll('#certifications .cert-box');
+
+certButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        certButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        certItems.forEach(item => {
+            if(filter === 'all' || item.getAttribute('data-category') === filter){
+                item.style.display = 'flex';
+                item.style.opacity = '1';
+                item.style.transition = 'all 0.5s ease';
+            } else {
+                item.style.opacity = '0';
+                setTimeout(()=>{ item.style.display='none'; }, 500);
+            }
+        });
+    });
+});
