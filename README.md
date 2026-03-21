@@ -20,29 +20,14 @@ The portfolio highlights my academic background, technical skills, certification
 
 ## 🛠️ Technologies Used
 
-### Languages
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
-- Python
-- SQL
-- Java
-- C
-
-### Databases
-- MySQL
-- SQL Server
-- MongoDB
-
-### Data Science / AI
-- Pandas
-- TensorFlow
-- PyTorch
-
-### Tools
-- Git
-- GitHub
-- VS Code
+- ScrollReveal.js
+- Typed.js
+- EmailJS
+- Boxicons
+- Font Awesome
 
 ---
 
